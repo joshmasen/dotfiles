@@ -1,6 +1,5 @@
 # Path to your oh-my-zsh installation.
 export ZSH=/Users/joshlawler/.oh-my-zsh
-source $ZSH/oh-my-zsh.sh
 
 # Set name of the theme to load.
 # Look in ~/.oh-my-zsh/themes/
@@ -41,6 +40,8 @@ eval "$(direnv hook zsh)"
 
 # Suppess Direnv feedback
 export DIRENV_LOG_FORMAT=
+
+source $ZSH/oh-my-zsh.sh
 
 # Reset github token specifically for gh cli
 gh() {
