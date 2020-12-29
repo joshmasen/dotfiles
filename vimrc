@@ -1,15 +1,13 @@
 " ------------------------------
-" Vundle 
+" Vundle
 " ------------------------------
-
-set nocompatible              " be iMproved, required
-filetype off                  " required
+" Required config for Vundle
+set nocompatible
+filetype off
 
 " set the runtime path to include Vundle and initialize
 set rtp+=~/.vim/bundle/Vundle.vim
 call vundle#begin()
-" alternatively, pass a path where Vundle should install plugins
-"call vundle#begin('~/some/path/here')
 
 " let Vundle manage Vundle, required
 Plugin 'VundleVim/Vundle.vim'
@@ -25,13 +23,13 @@ Plugin 'vim-airline/vim-airline'
 Plugin 'vim-airline/vim-airline-themes'
 Plugin 'tpope/vim-fugitive'
 Plugin 'junegunn/fzf'
-Plugin 'junegunn/fzf.vim', {'commit': '4145f53f3d343c389ff974b1f1a68eeb39fba18b'}
+Plugin 'junegunn/fzf.vim'
 Plugin 'tpope/vim-rails'
 Plugin 'rizzatti/dash.vim'
 " Syntax checking and semantic errors in Vim
 " https://github.com/dense-analysis/ale
 Plugin 'dense-analysis/ale'
-Plugin 'neoclide/coc.nvim', {'branch': 'release'}
+Plugin 'neoclide/coc.nvim'
 Plugin 'mattn/emmet-vim'
 Plugin 'preservim/nerdcommenter'
 " Snippet solution for coc.nvim:
@@ -39,15 +37,13 @@ Plugin 'preservim/nerdcommenter'
 " That loads these snippets:
 Plugin 'honza/vim-snippets'
 
-" All of your Plugins must be added before the following line
-call vundle#end()            " required
-filetype plugin indent on    " required
-" To ignore plugin indent changes, instead use:
-" filetype plugin on
+" All Plugins must be added before the following required configs
+call vundle#end()
+filetype plugin indent on
 
 
 " ------------------------------
-" General configuration
+" General vim configuration
 " ------------------------------
 
 " Set mapleader for key commands
@@ -94,7 +90,7 @@ set tabstop=4
 set shiftwidth=4
 set noexpandtab
 " Show tab indentation guides
-set listchars=tab:\│\ 
+set listchars=tab:\│\
 set list
 highlight SpecialKey ctermfg=238 ctermbg=black
 " Set modifiable (to add files in NERDTree)
@@ -104,6 +100,7 @@ set backspace=indent,eol,start
 " Expand colors
 set t_Co=256
 highlight Pmenu ctermbg=white
+
 
 " ------------------------------
 " Plugin configurations
@@ -118,6 +115,10 @@ let g:airline_theme="deus"
 
 " Populate the g:airline_symbols dictionary with the powerline symbols
 let g:airline_powerline_fonts = 1
+
+" Straight tab separators
+let g:airline#extensions#tabline#left_sep = ' '
+let g:airline#extensions#tabline#left_alt_sep = '|'
 
 " Configure Ale indicators
 let g:ale_sign_error = '❌'
@@ -307,13 +308,13 @@ let g:coc_snippet_next = '<tab>'
 
 
 " ------------------------------
-" Key Mappings 
+" Key Mappings
 " ------------------------------
 " This unsets the "last search pattern" register by hitting return
 nnoremap <CR> :noh<CR><CR>
 
 " Toggle NERDTree with leader n
-map <Leader>n :NERDTreeToggle<CR> 
+map <Leader>n :NERDTreeToggle<CR>
 
 " fzf maps
 nnoremap <Leader>f :Files<CR>
