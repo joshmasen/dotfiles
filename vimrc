@@ -25,13 +25,13 @@ Plugin 'vim-airline/vim-airline'
 Plugin 'vim-airline/vim-airline-themes'
 Plugin 'tpope/vim-fugitive'
 Plugin 'junegunn/fzf'
-Plugin 'junegunn/fzf.vim'
+Plugin 'junegunn/fzf.vim', {'commit': '4145f53f3d343c389ff974b1f1a68eeb39fba18b'}
 Plugin 'tpope/vim-rails'
 Plugin 'rizzatti/dash.vim'
 " Syntax checking and semantic errors in Vim
 " https://github.com/dense-analysis/ale
 Plugin 'dense-analysis/ale'
-Plugin 'neoclide/coc.nvim'
+Plugin 'neoclide/coc.nvim', {'branch': 'release'}
 Plugin 'mattn/emmet-vim'
 Plugin 'preservim/nerdcommenter'
 " Snippet solution for coc.nvim:
@@ -320,8 +320,8 @@ nnoremap <Leader>f :Files<CR>
 nnoremap <Leader>b :Buffers<CR>
 nnoremap <Leader>h :History<CR>
 
-" Use fzf in vim - must be last line
-set rtp+=/usr/local/opt/fzf
-
 " Use leader d to search Dash
 :nmap <silent> <leader>d <Plug>DashSearch
+
+" Use fzf in vim - must be last line
+set rtp+=/usr/local/opt/fzf

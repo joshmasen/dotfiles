@@ -1,18 +1,27 @@
-# Path to your oh-my-zsh installation.
-export ZSH=/$HOME/.oh-my-zsh
+# Enable Powerlevel10k instant prompt. Should stay close to the top of ~/.zshrc.
+# Initialization code that may require console input (password prompts, [y/n]
+# confirmations, etc.) must go above this block; everything else may go below.
+if [[ -r "${XDG_CACHE_HOME:-$HOME/.cache}/p10k-instant-prompt-${(%):-%n}.zsh" ]]; then
+  source "${XDG_CACHE_HOME:-$HOME/.cache}/p10k-instant-prompt-${(%):-%n}.zsh"
+fi
 
-# Set name of the theme to load.
-# Look in ~/.oh-my-zsh/themes/
-ZSH_THEME="agnoster"
+# Set up Powerlevel10k for zsh theme
+source /usr/local/opt/powerlevel10k/powerlevel10k.zsh-theme
 
-# Hides user@hostname at beginning of zsh prompt
-export USER=``
+# Set up zsh autocomplete
+# https://github.com/marlonrichert/zsh-autocomplete
+# cd into this directory and 'git pull' to update
+source /usr/local/bin/zsh-autocomplete/zsh-autocomplete.plugin.zsh
 
 # Export editor variable for tmuxinator
 export EDITOR="vim"
 
 alias fw="cd ~/Flywheel/flywheel-app"
-alias fwcompare="~/dotfiles/fwcompare.sh"
+alias fwcompare="~/bin/fwcompare.sh"
+
+alias ls='ls -G'
+alias ll='ls -G -al'
+alias gs='git status'
 
 # User configuration
 
@@ -25,8 +34,10 @@ export FZF_DEFAULT_OPTS='--height 96% --reverse --preview "cat {}"'
 # Currently using rvm for ruby, and it wants to be the first path
 export PATH="$HOME/.rvm/bin:$PATH"
 
-#export PATH="$HOME/.yarn/bin:$HOME/.config/yarn/global/node_modules/.bin:$PATH"
-#export PATH="$HOME/.bin:$PATH"
+export PATH="$PATH:/usr/local/bin"
+
+export PATH="$HOME/.yarn/bin:$HOME/.config/yarn/global/node_modules/.bin:$PATH"
+export PATH="$HOME/.bin:$PATH"
 #export PATH="/Applications/Postgres.app/Contents/Versions/latest/bin:$PATH"
 
 # Hook asdf into shell
@@ -39,10 +50,10 @@ eval "$(direnv hook zsh)"
 # Suppess Direnv feedback
 export DIRENV_LOG_FORMAT=
 
-# Initialize oh-my-zsh
-source $ZSH/oh-my-zsh.sh
-
 # Reset github token specifically for gh cli
 gh() {
   GITHUB_TOKEN= command gh "$@"
 }
+
+# To customize prompt, run `p10k configure` or edit ~/.p10k.zsh.
+[[ ! -f ~/.p10k.zsh ]] || source ~/.p10k.zsh
