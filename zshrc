@@ -24,7 +24,8 @@ alias ll='ls -G -al'
 alias gs='git status'
 alias gaa='git add . && gs'
 alias gc='git commit -m "'
-alias gpo='git push origin master'
+alias gca='git commit --amend --no-edit'
+alias {gpo,shipit}='git push origin master'
 
 # User configuration
 
