@@ -22,6 +22,8 @@ alias fwcompare="~/bin/fwcompare.sh"
 alias ls='ls -G'
 alias ll='ls -G -al'
 alias gs='git status'
+alias gaa='git add . && gs'
+alias gpo='git push origin master'
 
 # User configuration
 

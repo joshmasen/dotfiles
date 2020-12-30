@@ -90,7 +90,7 @@ set tabstop=4
 set shiftwidth=4
 set noexpandtab
 " Show tab indentation guides
-set listchars=tab:\│\
+set listchars=tab:\│\ 
 set list
 highlight SpecialKey ctermfg=238 ctermbg=black
 " Set modifiable (to add files in NERDTree)
@@ -100,6 +100,7 @@ set backspace=indent,eol,start
 " Expand colors
 set t_Co=256
 highlight Pmenu ctermbg=white
+highlight LineNr ctermfg=DarkGrey
 
 
 " ------------------------------
