@@ -128,6 +128,9 @@ let g:ale_sign_warning = '⚠️'
 " Set trigger for emmet
 let g:user_emmet_leader_key=','
 
+" Set json files to js for syntax highlighting
+autocmd BufNewFile,BufRead *.json set ft=javascript
+
 
 " ------------------------------
 " coc.nvim (autosuggest/complete plugin) suggested configs
